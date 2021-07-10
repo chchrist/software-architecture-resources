@@ -1,5 +1,11 @@
 # software-architecture-blogs
 
+## Criteria
+
+Criteria for selecting a blog are:
+* The majority of the posts must be about software architecture or things that affect software architecture
+* The posts must be not more than 2 years old. From my experience software architecture paradigms appear approximately every 2 years 
+
 ## Blogs
 
 | Blog | Author | Description | Tags |
@@ -8,3 +14,4 @@
 | https://architectelevator.com/ | Gregor Hohpe | Real life writes the best stories, so ride the architect elevator up and down Enterprise IT with me. | Architecture, Cloud, Strategy, Transformation
 | https://www.developertoarchitect.com/ | Mark Richards | Software Architecture Monday with Mark Richards is a free bi-weekly software architecture lesson containing a short video about some aspect of software architecture. These lessons contain tips, techniques, and advice to help you in your journey from developer to architect. New lessons will be posted every other Monday.  | Architecture, Microservices, Soft Skills, Event-Driven
 | https://markgreville.ie/ | Mark Greville | Technology, Architecture, Music and tales of Ireland | Architecture
+| https://jchyip.medium.com/ | Jason Yip | Senior Agile Coach at Spotify, ex-ThoughtWorks, ex-CruiseControl | Agile, Architecure, Organisations
