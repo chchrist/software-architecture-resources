@@ -4,7 +4,8 @@
 
 Criteria for selecting a blog are:
 * The majority of the posts must be about software architecture or things that affect software architecture
-* The posts must be not more than 2 years old. From my experience software architecture paradigms appear approximately every 2 years 
+* The content must not be obsolete.
+* It must be technology agnostic or applicable to a wide range of technologies 
 
 ## Blogs
 
