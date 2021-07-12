@@ -47,4 +47,4 @@ jobs:
           # Stage the file, commit and push
           git add blogs.md
           git commit -m "update blogs"
-          git push origin master
+          git push origin main
