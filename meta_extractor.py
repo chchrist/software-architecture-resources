@@ -4,7 +4,6 @@ import aiohttp
 import json
 import time
 import pytablewriter
-import io
 
 start_time = time.time()
 
@@ -12,20 +11,29 @@ with open("data.json", "r") as importedData:
     data = json.load(importedData)
 
 
+def validateMetaData(metaEntry):
+    if metaEntry:
+        return metaEntry["content"]
+    return "Missing content"
+
+def generateMarkdown(results):
+    writer = pytablewriter.MarkdownTableWriter()
+    writer.table_name = "Blogs"
+    writer.header_list = ["URL","Title", "Description"]
+    writer.value_matrix = results
+
+    with open("blogs.md", "w") as f:
+        writer.stream = f
+        writer.write_table()
+
+
 async def makeRequest(session, blogUrl):
     resp = await session.get(blogUrl)
     page = await resp.text()
     soup = BeautifulSoup(page, "html.parser")
-    title = soup.find("meta", attrs={"property": "og:title"})
-    description = soup.find("meta", attrs={"property": "og:description"})
-    if title:
-        title = title["content"]
-    else:
-        title = "Missing Title"
-    if description:
-        description = description["content"]
-    else:
-        description = "Missing Description"
+    title = validateMetaData(soup.find("meta", attrs={"property": "og:title"}))
+    description = validateMetaData(soup.find("meta", attrs={"property": "og:description"}))
+    
     return [blogUrl, title, description]
 
 
@@ -36,17 +44,7 @@ async def main():
             print(blogURL)
             tasks.append(makeRequest(session, blogURL))
         results = await asyncio.gather(*tasks)
-        # print(results)
-        writer = pytablewriter.MarkdownTableWriter()
-        writer.table_name = "Blogs"
-        writer.header_list = ["URL","Title", "Description"]
-        writer.value_matrix = results
-
-        with open("blogs.md", "w") as f:
-            writer.stream = f
-            writer.write_table()
+        generateMarkdown(results)
         
-
-
 asyncio.run(main())
 print("--- %s seconds ---" % (time.time() - start_time))
