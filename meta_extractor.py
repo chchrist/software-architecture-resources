@@ -19,7 +19,7 @@ def validateMetaData(metaEntry):
 def generateMarkdown(results):
     writer = pytablewriter.MarkdownTableWriter()
     writer.table_name = "Blogs"
-    writer.header_list = ["URL","Title", "Description"]
+    writer.header_list = ["URL","Title", "Description", "Image"]
     writer.value_matrix = results
 
     with open("blogs.md", "w") as f:
@@ -33,8 +33,10 @@ async def makeRequest(session, blogUrl):
     soup = BeautifulSoup(page, "html.parser")
     title = validateMetaData(soup.find("meta", attrs={"property": "og:title"}))
     description = validateMetaData(soup.find("meta", attrs={"property": "og:description"}))
+    image  = validateMetaData(soup.find("meta", attrs={"property": "og:image"}))
+    image = "<img src=\"{}\" width=\"200\" />".format(image)
     
-    return [blogUrl, title, description]
+    return [blogUrl, title, description, image]
 
 
 async def main():
@@ -48,3 +50,5 @@ async def main():
         
 asyncio.run(main())
 print("--- %s seconds ---" % (time.time() - start_time))
+
+
