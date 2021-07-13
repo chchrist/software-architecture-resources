@@ -1,6 +1,6 @@
 # software-architecture-resources
 
-## Bookshe
+## Software Architecture Books
 
 Please see this excellent list [here](https://github.com/mhadidg/software-architecture-books)
 
