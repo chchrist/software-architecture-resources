@@ -1,5 +1,9 @@
 # software-architecture-resources
 
+## Bookshe
+
+Please see this excellent list [here](https://github.com/mhadidg/software-architecture-books)
+
 ## Blogs
 
 ### Criteria for Blogs
