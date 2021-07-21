@@ -1,5 +1,9 @@
 # software-architecture-resources
 
+## Software Architect role
+
+This repository has good information on what the software architect's role is https://github.com/justinamiller/SoftwareArchitect
+
 ## Software Architecture Books
 
 Please see this excellent list [here](https://github.com/mhadidg/software-architecture-books)
@@ -13,7 +17,7 @@ Criteria for selecting a blog are:
 * The content must not be obsolete.
 * It must be technology agnostic or applicable to a wide range of technologies 
 
-### Blogs
+### Blogs Directory
 
 The table of blogs is autogenerating with a python script and you can find it [here](blogs.md)
 
