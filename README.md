@@ -21,6 +21,10 @@ Criteria for selecting a blog are:
 
 The table of blogs is autogenerating with a python script and you can find it [here](blogs.md)
 
+### Youtube Channels
+
+A list of youtube channels can be found [here](youtube.md)
+
 ### Contributing
 
 Just make a pull request by adding the link to the blog's website in [data.json](data.json)
