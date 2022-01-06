@@ -34,7 +34,7 @@ jobs:
         run: |
           pip install pipenv
           pipenv install --deploy --dev
-      - run: pipenv run python3 meta_extractor.py
+      - run: pipenv run python3 meta_extractor.py -f data.json
       
       - name: setup git config
         run: |
