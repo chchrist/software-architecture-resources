@@ -4,10 +4,18 @@ import aiohttp
 import json
 import time
 import pytablewriter
+import argparse
 
 start_time = time.time()
 
-with open("data.json", "r") as importedData:
+parser = argparse.ArgumentParser()
+
+parser.add_argument("-f", "--file", help="File to parse")
+
+args = parser.parse_args()
+
+
+with open(args.file, "r") as importedData:
     data = json.load(importedData)
 
 
